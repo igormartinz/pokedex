@@ -1,0 +1,176 @@
+
+/* CONTEUDO */
+#conteudo {
+    background-color: var(--cor-branco);
+    border-radius: 20px;
+    border: 2px solid #000;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 500 / 720;
+    box-shadow: 4px 4px 0 #000, 10px 10px 0 #000;
+    overflow: hidden;
+    position: relative;
+    margin: 0 20px 0 15px;
+}
+
+#tela {
+    background-color: var(--cor-vermelha);
+    height: 63%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: var(--tamanho-borda) solid var(--cor-preto);
+}
+
+#tela div {
+    background-color: var(--cor-verde-claro);
+    width: 80%;
+    height: 80%;
+    border-radius: 3%;
+    border: var(--tamanho-borda) solid var(--cor-preto);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#id-pokemon {
+    top: 10px;
+    left: 10px;
+    position: absolute;
+    font-size: clamp(24px, 36px, 36px);
+}
+
+#nome-pokemon {
+    font-size: clamp(24px, 36px, 36px);
+    text-transform: uppercase;
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#img-pokemon {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+#circulo-pokebola {
+    width: 4%;
+    height: 2.8%;
+    background-color: var(--cor-branco);
+    border: var(--tamanho-borda) solid var(--cor-preto);
+    position: absolute;
+    top: 63.6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6%;
+}
+
+#form form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#input-pesquisa {
+    width: 100%;
+    padding: 3%;
+    border: 2px solid var(--cor-preto);
+    border-radius: 4px;
+    background-color: #DBD9D9;
+    font-size: clamp(16px, 24px, 24px);
+}
+
+#input-pesquisa::placeholder {
+    color: #595959;
+}
+
+#botoes {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botoes-movimentancao {
+    display: flex;
+    gap: 10px;
+    width: 40%;
+}
+
+.botoes-movimentancao button {
+    background-color: #383838;
+    padding: 10% 10%;
+    border: 1px solid var(--cor-preto);
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 #000;
+}
+
+.botoes-movimentancao button img {
+    width: 100%;
+}
+
+.botoes-acao {
+    width: 30%;
+}
+
+.btn-detalhes,
+#btn-buscar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 71%;
+    height: 6.7%;
+    padding: 13%;
+    box-shadow: 3px 3px 0 var(--cor-preto);
+}
+
+#btn-buscar {
+    width: 100%;
+    height: 100%;
+    padding: 13%;
+}
+
+.btn-detalhes,
+#btn-buscar {
+    background-color: var(--cor-amarelo);
+    border: 1px solid var(--cor-preto);
+    border-radius: 50%;
+}
+
+.div-detalhes {
+    position: absolute;
+    top: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 12%;
+}
+
+.div-pesquisa{
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    top: 80%;
+    right: 7%;
+    width: 12%;
+}
