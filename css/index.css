@@ -39,11 +39,11 @@
     top: 10px;
     left: 10px;
     position: absolute;
-    font-size: clamp(24px, 36px, 36px);
+    font-size: clamp(26px, 7vw, 36px);
 }
 
 #nome-pokemon {
-    font-size: clamp(24px, 36px, 36px);
+    font-size: clamp(30px, 8vw, 42px);
     text-transform: uppercase;
     position: absolute;
     top: 83%;
@@ -94,7 +94,7 @@
     border: 2px solid var(--cor-preto);
     border-radius: 4px;
     background-color: #DBD9D9;
-    font-size: clamp(16px, 24px, 24px);
+    font-size: clamp(16px, 5vw, 24px);
 }
 
 #input-pesquisa::placeholder {
@@ -174,3 +174,8 @@
     right: 7%;
     width: 12%;
 }
+
+.div-detalhes p, .div-pesquisa p{
+    padding-left: 0.3em;
+    font-size: clamp(10px, 4vw, 16px);
+} 
