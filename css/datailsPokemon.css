@@ -9,6 +9,7 @@ main section {
     margin: 80px 15px 30px 15px;
 }
 
+/* PERFIL DO POKÉMON */
 .profile-pokemon {
     text-align: center;
 }
@@ -31,6 +32,7 @@ main section {
     margin: 10px 0;
 }
 
+/* INFORMAÇÕES DO POKÉMON */
 .info-pokemon {
     display: flex;
     justify-content: space-between;
@@ -48,6 +50,7 @@ main section {
     color: var(--cor-cinza);
 }
 
+/* EVOLUÇÕES DO POKÉMON */
 .evolution-img {
     display: flex;
     gap: .7em;
@@ -62,6 +65,7 @@ main section {
     font-size: 28px;
 }
 
+/* ESTATÍSTICAS DO POKÉMON */
 .list-ability{
     display: flex;
     flex-direction: column;

@@ -12,6 +12,7 @@
     margin: 0 20px 0 15px;
 }
 
+/* TELA */
 #display {
     background-color: var(--cor-vermelha);
     height: 63%;
@@ -60,6 +61,7 @@
     image-rendering: crisp-edges;
 }
 
+/* BOLA */
 #circle-pokeball {
     width: 4%;
     height: 2.8%;
@@ -72,6 +74,7 @@
     border-radius: 50%;
 }
 
+/* INPUT E BOTÕES */
 #form {
     display: flex;
     justify-content: center;
