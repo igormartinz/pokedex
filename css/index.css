@@ -1,6 +1,5 @@
-
 /* CONTEUDO */
-#conteudo {
+#content {
     background-color: var(--cor-branco);
     border-radius: 20px;
     border: 2px solid #000;
@@ -13,7 +12,7 @@
     margin: 0 20px 0 15px;
 }
 
-#tela {
+#display {
     background-color: var(--cor-vermelha);
     height: 63%;
     display: flex;
@@ -22,7 +21,7 @@
     border-bottom: var(--tamanho-borda) solid var(--cor-preto);
 }
 
-#tela div {
+#display div {
     background-color: var(--cor-verde-claro);
     width: 80%;
     height: 80%;
@@ -42,7 +41,7 @@
     font-size: clamp(26px, 7vw, 36px);
 }
 
-#nome-pokemon {
+#name-pokemon {
     font-size: clamp(30px, 8vw, 42px);
     text-transform: uppercase;
     position: absolute;
@@ -61,7 +60,7 @@
     image-rendering: crisp-edges;
 }
 
-#circulo-pokebola {
+#circle-pokeball {
     width: 4%;
     height: 2.8%;
     background-color: var(--cor-branco);
@@ -88,7 +87,7 @@
     justify-content: space-between;
 }
 
-#input-pesquisa {
+#input-search {
     width: 100%;
     padding: 3%;
     border: 2px solid var(--cor-preto);
@@ -97,41 +96,41 @@
     font-size: clamp(16px, 5vw, 24px);
 }
 
-#input-pesquisa::placeholder {
+#input-search::placeholder {
     color: #595959;
 }
 
-#botoes {
+#buttons {
     margin-top: 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.botoes-movimentancao {
+.buttons-movement {
     display: flex;
     gap: 10px;
     width: 40%;
 }
 
-.botoes-movimentancao button {
+.buttons-movement button {
     background-color: #383838;
     padding: 10% 10%;
-    border: 1px solid var(--cor-preto);
+    border: var(--tamanho-borda-botoes) solid var(--cor-preto);
     border-radius: 5px;
     box-shadow: 4px 4px 0 var(--cor-preto);
 }
 
-.botoes-movimentancao button img {
+.buttons-movement button img {
     width: 100%;
 }
 
-.botoes-acao {
+.buttons-action {
     width: 30%;
 }
 
-.btn-detalhes,
-#btn-buscar {
+.btn-details,
+#btn-submit {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,16 +140,16 @@
     box-shadow: 4px 4px 0 var(--cor-preto);
 }
 
-#btn-buscar {
+#btn-submit {
     width: 100%;
     height: 100%;
     padding: 13%;
 }
 
-.btn-detalhes,
-#btn-buscar {
+.btn-details,
+#btn-submit {
     background-color: var(--cor-amarelo);
-    border: 1px solid var(--cor-preto);
+    border: var(--tamanho-borda-botoes) solid var(--cor-preto);
     border-radius: 50%;
 }
 
@@ -164,7 +163,7 @@
     width: 12%;
 }
 
-.div-pesquisa{
+.div-pesquisa {
     position: absolute;
     display: flex;
     gap: 5px;
@@ -175,7 +174,8 @@
     width: 12%;
 }
 
-.div-detalhes p, .div-pesquisa p{
+.div-detalhes p,
+.div-pesquisa p {
     padding-left: 0.3em;
     font-size: clamp(10px, 4vw, 16px);
-} 
+}

@@ -11,6 +11,7 @@
     --cor-verde-escuro: #1A2A1A;
     --cor-verde-claro: #88CC88;
     --tamanho-borda: clamp(4px, 1.8vw, 10px);
+    --tamanho-borda-botoes: clamp(1px, .5vw, 2px);
 }
 
 * {
