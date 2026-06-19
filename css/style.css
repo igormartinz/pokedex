@@ -37,6 +37,10 @@ h1, h2, h3, h4{
     font-weight: normal;
 }
 
+button{
+    cursor: pointer;
+}
+
 #sound{
     background-color: var(--cor-vermelha);
     position: absolute;

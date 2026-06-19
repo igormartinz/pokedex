@@ -119,6 +119,12 @@
     border: var(--tamanho-borda-botoes) solid var(--cor-preto);
     border-radius: 5px;
     box-shadow: var(--tamanho-sombra) var(--tamanho-sombra) 0 var(--cor-preto);
+    transition: transform 0.1s, box-shadow 0.1s; /*Adiciona duas transições*/
+}
+
+.buttons-movement button:active{
+    transform: translate(var(--tamanho-sombra), var(--tamanho-sombra));
+    box-shadow: none;
 }
 
 .buttons-movement button img {
@@ -138,6 +144,12 @@
     height: 6.7%;
     padding: 13%;
     box-shadow: var(--tamanho-sombra) var(--tamanho-sombra) 0 var(--cor-preto);
+    transition: transform 0.1s, box-shadow 0.1s; /*Adiciona duas transições*/
+}
+
+.btn-details:active, #btn-submit:active{
+    transform: translate(var(--tamanho-sombra), var(--tamanho-sombra));
+    box-shadow: none;
 }
 
 #btn-submit {
