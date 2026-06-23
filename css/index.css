@@ -46,9 +46,11 @@
     font-size: clamp(30px, 8vw, 42px);
     text-transform: uppercase;
     position: absolute;
-    top: 83%;
+    top: 92%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
 }
 
 #img-pokemon {
