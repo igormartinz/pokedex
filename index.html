@@ -25,9 +25,11 @@
 
             <!-- TELA -->
             <div id="display">
-                <div>
+                <div id="content-display">
                     <span id="id-pokemon"></span>
-                    <img src="" alt="Pokémon" id="img-pokemon">
+                    <div id="content-img-pokemon">
+                        <img src="" alt="Pokémon" id="img-pokemon">
+                    </div>
                     <h1 id="name-pokemon"></h1>
                 </div>
             </div>
@@ -37,27 +39,26 @@
 
 
             <!-- INPUT E BOTÕES -->
-            <div id="form">
-                <form>
-                    <input type="search" id="input-search" placeholder="Busque pelo Nome ou ID...">
+            <div id="content-buttons">
+                <form id="form">
+                    <input type="search" id="input-search" placeholder="Busque pelo Nome ou ID..." required>
 
                     <div id="buttons">
                         <div class="buttons-movement">
-                            <button id="btn-prev">
-                                <img src="/svg/seta-esquerda.svg" alt="">
+                            <button id="btn-prev" type="button">
+                                <img src="/svg/seta-esquerda.svg" alt="Seta para esquerda">
                             </button>
-                            <button id="btn-next">
-                                <img src="/svg/seta-direita.svg" alt="">
+                            <button id="btn-next" type="button">
+                                <img src="/svg/seta-direita.svg" alt="Seta para direita">
                             </button>
                         </div>
-
                         <div class="buttons-action">
                             <div class="div-details">
-                                <a href="detailsPokemon.html" class="btn-details">
+                                <button type="button" class="btn-details" id="btn-details">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#1f1f1f">
                                         <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
                                     </svg>
-                                </a>
+                                </button>
                                 <p>Detalhes</p>
                             </div>
                             <div class="div-search">
