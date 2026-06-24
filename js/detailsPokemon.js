@@ -14,6 +14,7 @@ const pokemonSpecialDefense = document.getElementById('special-defense-pokemon')
 const pokemonSpeed = document.getElementById('speed-pokemon');
 const pokemonPower = document.getElementById('power-pokemon');
 
+// Faz requisição para API que retorna os dados
 const fetchPokemon = async (pokemon) => {
 
     const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
@@ -46,23 +47,30 @@ const fetchEvolutionChain = async (url) => {
     }
 }
 
-const alingEvolutionChain = async (chain) => {
+// Percorre a cadeita e busca apenas o ID do Pokémon 
+const extractEvolutionChain = async (chain) => {
 
     const evolutions = [];
 
     while (chain) {
 
+        // Coleta a URL do especie do Pokémon
         const urlPokemon = chain.species.url;
+
+        // Trasforma em array(split), remove espaços vazios(filter), e coleta o ultimo valor(pop)
         const idPokemon = urlPokemon.split('/').filter(Boolean).pop();
 
+        // Adiciona o ID no array
         evolutions.push({ id: idPokemon });
 
+        // Passa para o proximo até ser null
         chain = chain.evolves_to[0] || null;
     }
 
     return evolutions;
 }
 
+// Renderiza as evoluções do Pokémon
 function renderEvoluntions(evolutions) {
     const pokemonEvolutions = document.getElementById('evolutions-pokemon');
 
@@ -81,16 +89,12 @@ function renderEvoluntions(evolutions) {
     });
 }
 
+// Renderiza os dados do Pokémon
 const renderPokemon = async (pokemon) => {
-
-    pokemonID.style.display = 'none';
-    pokemonName.innerHTML = `Carregando...`;
-    pokemonImage.src = '../img/pokebola.png';
 
     const data = await fetchPokemon(pokemon);
 
     if (data) {
-        pokemonID.style.display = 'block';
         pokemonID.innerHTML = `# ${data.id}`
         pokemonName.innerHTML = data.name;
         pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
@@ -107,7 +111,7 @@ const renderPokemon = async (pokemon) => {
             let evolutionsData = await fetchEvolutionChain(speciesData.evolution_chain.url);
 
             if (evolutionsData) {
-                const evolutions = await alingEvolutionChain(evolutionsData.chain);
+                const evolutions = await extractEvolutionChain(evolutionsData.chain);
                 renderEvoluntions(evolutions);
             }
         }
@@ -138,7 +142,7 @@ const renderPokemon = async (pokemon) => {
     
 }
 
-
+// Renderiza o tipo do Pokémon
 function renderTypesPokemon(data) {
     const pokemonType = document.getElementById('types-pokemon');
 
@@ -238,6 +242,7 @@ function renderTypesPokemon(data) {
     }
 }
 
+// Renderiza as habilidades do Pokémon
 function renderStats(stats){
 
     const maxValue = 255;
@@ -258,6 +263,7 @@ function renderStats(stats){
     };
 }
 
+// Coleta ID do Pokémon na URL
 document.addEventListener('DOMContentLoaded', () =>{
     const param = new URLSearchParams(window.location.search);
     const pokemonID = param.get('id');

@@ -12,6 +12,7 @@ const btnNext = document.getElementById('btn-next');
 
 let searchPokemon = 1;
 
+// Faz requisição para API que retorna os dados
 const fetchPokemon = async (pokemon) => {
 
     const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
@@ -22,6 +23,7 @@ const fetchPokemon = async (pokemon) => {
     }
 }
 
+// Renderiza os dados do Pokémon
 const renderPokemon = async (pokemon) => {
 
     pokemonID.style.display = 'none';
@@ -37,7 +39,7 @@ const renderPokemon = async (pokemon) => {
         pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
 
         searchPokemon = data.id;
-        
+
         input.value = '';
     } else {
         pokemonID.style.display = 'none';
@@ -47,20 +49,24 @@ const renderPokemon = async (pokemon) => {
     }
 }
 
+// Redireciona para página de detalhes com o ID do Pokémon na URL
 btnDetails.addEventListener('click', () =>{
     window.location.href = `detailsPokemon.html?id=${searchPokemon}`;
 });
 
+// Busca pelo Pokémon
 form.addEventListener('submit', (event) =>{
     event.preventDefault();
     renderPokemon(input.value.toLowerCase());
 });
 
+// Passa para o proximo Pokémon
 btnNext.addEventListener('click', () =>{
     searchPokemon += 1;
     renderPokemon(searchPokemon);
 })
 
+// Passa para o Pokémon anterior
 btnPrev.addEventListener('click', () =>{
     if(searchPokemon > 1){
         searchPokemon -= 1;
