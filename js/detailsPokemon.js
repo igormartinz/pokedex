@@ -88,6 +88,11 @@ function renderEvoluntions(evolutions) {
         const evoImg = document.createElement('img');
         evoImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/refs/heads/master/sprites/pokemon/versions/generation-v/black-white/animated/${evolution.id}.gif`;
 
+        // onerror: em caso de falha ao carregar imagem, execute {...}
+        evoImg.onerror = () => {
+            evoImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${evolution.id}.png`
+        }
+
         pokemonEvolutions.appendChild(evoImg);
     });
 }
@@ -100,7 +105,7 @@ const renderPokemon = async (pokemon) => {
     if (data) {
         pokemonID.innerHTML = `# ${data.id}`
         pokemonName.innerHTML = data.name;
-        pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+        pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'] || data['sprites']['front_default'];
 
         pokemonHeight.innerHTML = `${(data.height) * 10} CM`;
         pokemonWeight.innerHTML = `${(data.weight) / 10} KG`;

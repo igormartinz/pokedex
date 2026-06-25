@@ -36,7 +36,7 @@ const renderPokemon = async (pokemon) => {
         pokemonID.style.display = 'block';
         pokemonID.innerHTML = `# ${data.id}`
         pokemonName.innerHTML = data.name;
-        pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+        pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'] || data['sprites']['front_default'];
 
         searchPokemon = data.id;
 
