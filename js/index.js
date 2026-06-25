@@ -62,8 +62,10 @@ form.addEventListener('submit', (event) =>{
 
 // Passa para o proximo Pokémon
 btnNext.addEventListener('click', () =>{
-    searchPokemon += 1;
-    renderPokemon(searchPokemon);
+    if(searchPokemon < 1025){
+        searchPokemon += 1;
+        renderPokemon(searchPokemon);
+    }
 })
 
 // Passa para o Pokémon anterior
