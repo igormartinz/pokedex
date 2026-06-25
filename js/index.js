@@ -28,23 +28,29 @@ const renderPokemon = async (pokemon) => {
 
     pokemonID.style.display = 'none';
     pokemonName.innerHTML = `Carregando...`;
-    pokemonImage.src = '../img/pokebola.png';
-
+    pokemonImage.style.display = 'none';
+    
     const data = await fetchPokemon(pokemon);
-
+    
     if (data) {
         pokemonID.style.display = 'block';
         pokemonID.innerHTML = `# ${data.id}`
         pokemonName.innerHTML = data.name;
+        pokemonImage.classList.add('img-pokemon');
+        pokemonImage.classList.remove('img-not-found');
+        pokemonImage.style.display = 'block';
         pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'] || data['sprites']['front_default'];
-
+        
         searchPokemon = data.id;
-
+        
         input.value = '';
     } else {
         pokemonID.style.display = 'none';
-        pokemonName.innerHTML = `Não encontrado!`;
-        pokemonImage.style.imageRendering = 'auto';
+        pokemonImage.style.display = 'block';
+        pokemonName.style.top = '90%';
+        pokemonName.innerHTML = `Pokémon<br>não encontrado!`;
+        pokemonImage.classList.add('img-not-found');
+        pokemonImage.classList.remove('img-pokemon');
         pokemonImage.src = '../img/pokebola.png';
     }
 }
