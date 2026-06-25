@@ -40,3 +40,35 @@ h1, h2, h3, h4{
 button{
     cursor: pointer;
 }
+
+main{
+    view-transition-name: main;
+}
+
+@view-transition{
+    navigation: auto;
+}
+
+@keyframes leaving{
+    to{
+        transform: translateY(100%);
+    }
+}
+
+@keyframes entering{
+    from{
+        transform: translateY(100%);
+    }
+}
+
+::view-transition-group(root){
+    animation-duration: 2s;
+}
+
+::view-transition-old(main){
+    animation-name: leaving;
+}
+
+::view-transition-new(main){
+    animation-name: entering;
+}
