@@ -40,20 +40,3 @@ h1, h2, h3, h4{
 button{
     cursor: pointer;
 }
-
-#sound{
-    background-color: var(--cor-vermelha);
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: .6em;
-    border-radius: 50%;
-    border: 4px solid var(--cor-preto);
-}
-
-#sound svg{
-    width: 2.5em;
-}
