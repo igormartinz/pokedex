@@ -74,4 +74,14 @@ btnPrev.addEventListener('click', () =>{
     }
 })
 
+// Coleta ID do Pokémon na URL
+document.addEventListener('DOMContentLoaded', () =>{
+    const param = new URLSearchParams(window.location.search);
+    searchPokemon = param.get('id');
+
+    if(searchPokemon){
+        renderPokemon(searchPokemon);
+    }
+});
+
 renderPokemon(searchPokemon);

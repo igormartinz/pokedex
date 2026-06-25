@@ -1,5 +1,5 @@
 // Informações do Pokémon
-const pokemonID = document.getElementById('id-pokemon');
+let pokemonID = document.getElementById('id-pokemon');
 const pokemonName = document.getElementById('name-pokemon');
 const pokemonImage = document.getElementById('img-pokemon');
 const pokemonHeight = document.getElementById('height-pokemon');
@@ -13,6 +13,9 @@ const pokemonSpecialAttack = document.getElementById('special-attack-pokemon');
 const pokemonSpecialDefense = document.getElementById('special-defense-pokemon');
 const pokemonSpeed = document.getElementById('speed-pokemon');
 const pokemonPower = document.getElementById('power-pokemon');
+
+// Botão
+const btnBack = document.getElementById('btn-back');
 
 // Faz requisição para API que retorna os dados
 const fetchPokemon = async (pokemon) => {
@@ -266,9 +269,14 @@ function renderStats(stats){
 // Coleta ID do Pokémon na URL
 document.addEventListener('DOMContentLoaded', () =>{
     const param = new URLSearchParams(window.location.search);
-    const pokemonID = param.get('id');
+    pokemonID = param.get('id');
 
     if(pokemonID){
         renderPokemon(pokemonID);
     }
+});
+
+// Redireciona para página de detalhes com o ID do Pokémon na URL
+btnBack.addEventListener('click', () =>{
+    window.location.href = `index.html?id=${pokemonID}`;
 });
